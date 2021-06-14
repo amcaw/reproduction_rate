@@ -1,7 +1,3 @@
-#' ---
-#' author: ""
-#' ---
-
 ## required packages
 library(EpiEstim)
 library(knitr)
@@ -24,14 +20,14 @@ estimate_R(
 ## tabulate last values
 collapse <-
 function(x) {
-  x <- formatC(x, format = "f", digits = 3)
-  paste0(x[1], " (", paste(x[2:3], collapse = "-"), ")")
+  x <- formatC(x, format = "f", digits = 2)
+  paste0(x[1])
 }
 
 kable(
-  col.names = c("DATE", "Rt (95% CI)"),
+  col.names = c("DATE", "Rt"),
   data.frame(
     DATE = tail(unique(dta$DATE), 14),
     Rt = apply(tail(Rt$R[, c(8, 5, 11)], 14), 1, collapse)))
 
-##rmarkdown::render("reproduction-number.R")
+write_csv(data.frame('data/', 'results','.csv')
