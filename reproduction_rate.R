@@ -32,4 +32,4 @@ zz<-kable(
 
 write.csv(data.frame(
     DATE = tail(unique(dta$DATE), 14),
-    Rt = apply(tail(Rt$R[, c(8, 5, 11)], 14), 1, collapse)), 'data/', 'result', '.csv')
+    Rt = apply(tail(Rt$R[, c(8, 5, 11)], 14), 1, collapse)), "./data/result.csv")
