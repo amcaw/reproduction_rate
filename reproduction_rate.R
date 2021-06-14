@@ -1,7 +1,6 @@
 ## required packages
 library(EpiEstim)
 library(knitr)
-library()
 
 ## import data
 dta <- read.csv("/Users/ambroisecarton/Downloads/COVID19BE_HOSP.csv")
