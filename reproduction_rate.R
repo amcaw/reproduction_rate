@@ -1,9 +1,10 @@
 ## required packages
 library(EpiEstim)
 library(knitr)
+library()
 
 ## import data
-dta <- read.csv("https://epistat.sciensano.be/Data/COVID19BE_HOSP.csv")
+dta <- read.csv("/Users/ambroisecarton/Downloads/COVID19BE_HOSP.csv")
 
 ## aggregate new intakes
 dta_agg <- aggregate(NEW_IN ~ DATE, dta, sum)
@@ -24,8 +25,12 @@ function(x) {
   paste0(x[1])
 }
 
-kable(
-  col.names = c("DATE", "Rt"),
+zz<-kable(
+  col.names = c("DATE", "Rt_calc"),
   data.frame(
     DATE = tail(unique(dta$DATE), 14),
     Rt = apply(tail(Rt$R[, c(8, 5, 11)], 14), 1, collapse)))
+
+write.csv(data.frame(
+    DATE = tail(unique(dta$DATE), 14),
+    Rt = apply(tail(Rt$R[, c(8, 5, 11)], 14), 1, collapse)), "/Users/ambroisecarton/Desktop/vacctrack/result.csv")
