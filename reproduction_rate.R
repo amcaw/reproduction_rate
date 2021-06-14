@@ -29,5 +29,3 @@ kable(
   data.frame(
     DATE = tail(unique(dta$DATE), 14),
     Rt = apply(tail(Rt$R[, c(8, 5, 11)], 14), 1, collapse)))
-
-write_csv(data.frame('data/', 'results','.csv')
