@@ -3,7 +3,8 @@ name: test
 
 # Controls when the action will run.
 on:
-  push:
+  schedule:
+  - cron: "0 3 * * *"
 
 jobs:
   autoscrape:
