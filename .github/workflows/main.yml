@@ -1,7 +1,7 @@
 # Hourly scraping
 name: test
 
-# Controls when the action will runn
+# Controls when the action will runnn
 on:
   push:
 
