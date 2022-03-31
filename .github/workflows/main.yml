@@ -3,7 +3,7 @@ name: reproduction_rate
 # Controls when the action will runn
 on:
  schedule:
-    - cron: "20 4 * * 2-6"
+    - cron: "20 4 * * 2,5"
 
 
 jobs:
